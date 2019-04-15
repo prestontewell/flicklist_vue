@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ message }}</h1>
+
+    <h1>Lists: {{ Lists }}</h1>
+    <div v-for="list in lists">
+      <h2>{{ list.name }}</h2>
+      
+    </div>
   </div>
 </template>
 
+
+<style>
+</style>
+
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from "axios";
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+  data: function() {
+    return {
+      lists: []
+    };
+  },
+  
+  created: function() {
+    axios.get("api/lists").then(response => {
+      this.lists = response.data;
+    });
+  },
+
+
+  methods: {}
+};
+  
+
 </script>
