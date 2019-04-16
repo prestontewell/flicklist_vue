@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
 
-    <h1>Lists: {{ Lists }}</h1>
+    <h1>Lists: {{  }}</h1>
     <div v-for="list in lists">
       <h2>{{ list.name }}</h2>
       
