@@ -26,7 +26,7 @@ export default new Router({
       component: ListsShow
     },
     {
-      path: '/titles',
+      path: '/titles/:searchInput',
       name: 'titles',
       component: TitlesIndex
     },

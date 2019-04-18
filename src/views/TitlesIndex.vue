@@ -1,8 +1,8 @@
 <template>
   <div class="titles">
     <h1>All Titles</h1>
-    <div v-for="title in titles">
-      <h2>{{ title.name }}</h2>
+    <div v-for="title in titles.results">
+      <h2>{{ title.title }}</h2>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("/api/titles").then(response => {
+    axios.get("/api/titles?search=" + this.$route.params.searchInput).then(response => {
       this.titles = response.data;
     });
   },
