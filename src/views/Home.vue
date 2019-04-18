@@ -3,7 +3,7 @@
 
     <h1>Lists: {{  }}</h1>
     <div v-for="list in lists">
-      <h2>{{ list.name }}</h2>
+      <h2><router-link v-bind:to="'/lists/' + list.id">{{ list.name }}</router-link></h2>
       
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
       this.lists = response.data;
     });
   },
+
 
 
   methods: {}

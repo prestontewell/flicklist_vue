@@ -3,7 +3,10 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
-import Logout from "./views/Logout.vue"
+import Logout from "./views/Logout.vue";
+import TitlesIndex from "./views/TitlesIndex.vue";
+import ListsShow from "./views/ListsShow.vue";
+
 
 
 Vue.use(Router);
@@ -16,6 +19,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/lists/:id',
+      name: 'lists-show',
+      component: ListsShow
+    },
+    {
+      path: '/titles',
+      name: 'titles',
+      component: TitlesIndex
     },
 
     {
