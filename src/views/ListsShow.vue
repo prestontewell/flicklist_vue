@@ -15,7 +15,7 @@
 
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
   data: function() {
     return {
@@ -26,8 +26,8 @@ export default {
     axios.get("/api/lists/" + this.$route.params.id).then(response => {
       console.log(response.data);
       this.list = response.data;
-    })
-    console.log(this.$route.params.id)
+    });
+    console.log(this.$route.params.id);
   },
   methods: {}
 };

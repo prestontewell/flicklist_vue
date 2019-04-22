@@ -5,6 +5,7 @@ import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import TitlesIndex from "./views/TitlesIndex.vue";
+import TitlesShow from "./views/TitlesShow.vue";
 import ListsShow from "./views/ListsShow.vue";
 
 
@@ -26,9 +27,14 @@ export default new Router({
       component: ListsShow
     },
     {
-      path: '/titles/:searchInput',
+      path: '/titles-search/:searchInput',
       name: 'titles',
       component: TitlesIndex
+    },
+    {
+      path: '/titles/:id',
+      name: 'titles-show',
+      component: TitlesShow
     },
 
     {
@@ -39,7 +45,7 @@ export default new Router({
 
     {
       path: '/logout',
-      name: 'logou',
+      name: 'logout',
       component: Logout
     },
 

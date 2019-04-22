@@ -78,7 +78,7 @@ export default {
 
     submit: function() {
       console.log(this.searchInput);
-      this.$router.push("/titles/" + this.searchInput);
+      this.$router.push("/titles-search/" + this.searchInput);
        
 
     },

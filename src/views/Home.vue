@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-    <h1>Lists: {{  }}</h1>
+    <h1>Now Showing {{  }}</h1>
     <div v-for="list in lists">
       <h2><router-link v-bind:to="'/lists/' + list.id">{{ list.name }}</router-link></h2>
       
