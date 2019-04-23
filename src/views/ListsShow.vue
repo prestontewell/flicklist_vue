@@ -2,9 +2,9 @@
   <div class="root">
     <h1><p>{{ list.name }}</p></h1>
     <div v-for='title in list.titles'>
-      {{ title.original_title }}
-      <div v-if='title.original_name'>
-        {{ title.original_name }}
+      <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_title }}</router-link>
+      <div v-if='title.body.original_name'>
+        <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_name }}</router-link>
       </div>
     </div>
     
@@ -28,6 +28,7 @@ export default {
       this.list = response.data;
     });
     console.log(this.$route.params.id);
+    console.log(this.$route);
   },
   methods: {}
 };
