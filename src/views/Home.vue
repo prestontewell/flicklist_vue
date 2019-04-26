@@ -43,7 +43,7 @@ export default {
         name: this.newListName
       };
       axios.post('/api/lists', params).then(response => {
-        this.$router.push('/');
+        this.lists.push(response.data);
       });
     }
   }

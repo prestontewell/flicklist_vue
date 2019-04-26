@@ -1,5 +1,6 @@
 <template>
   <div class="root">
+    <p>Add New Title Option</p>
     <h1><p>{{ list.name }}</p></h1>
     <div v-for='title in list.titles'>
       <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_title }}</router-link>

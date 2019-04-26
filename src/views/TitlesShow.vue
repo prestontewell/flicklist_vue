@@ -71,7 +71,8 @@ export default {
         media_type: this.newMediaType
       };
       axios.post('/api/list_titles', params).then(response => {
-        this.$router.push('/lists/');
+        console.log(response.data);
+        this.$router.push('/lists/' + response.data.list_id);
       }); 
     }
   },
