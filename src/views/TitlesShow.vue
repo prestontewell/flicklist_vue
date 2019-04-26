@@ -1,18 +1,19 @@
 <template>
   <div class="title">
     <h1>Title</h1>
-    <h2>{{ title.title }}</h2>
-    <h4>Runtime:{{ title.runtime }}</h4>
-    <h3>Summary: {{ title.overview }}</h3>
-    <div v-for="cast in title.credits.cast">
-      <p>{{ cast.name }} : {{ cast.character }}</p>
-    </div>
     <form v-on:submit.prevent="addTitle()">
       <p>List ID: <input type="text" v-model="newListId"></p>
       <p>Title ID: <input type="text" v-model="newTitleId"></p>
       <p>Media Type: <input type="text" v-model="newMediaType"></p>
       <input type="submit" value="Add To List">
     </form>
+    <h2>{{ title.title }}</h2>
+    <!-- <h4>Runtime:{{ title.runtime }}</h4> -->
+    <h3>Summary: {{ title.overview }}</h3>
+    <h3>Cast:</h3>
+    <div v-for="cast in title.credits.cast">
+      <p>{{ cast.name }} : {{ cast.character }}</p>
+    </div>
     <!-- <button v-on:click="addTitle(title)">Add To List</button> -->
     <!-- <p>{{ title.credits.cast }}</p> -->
   </div>
@@ -70,7 +71,7 @@ export default {
         media_type: this.newMediaType
       };
       axios.post('/api/list_titles', params).then(response => {
-        this.$router.push('/lists/' + this.$route.params.newListId);
+        this.$router.push('/lists/');
       }); 
     }
   },
