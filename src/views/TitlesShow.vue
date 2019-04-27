@@ -7,12 +7,12 @@
       <p>Media Type: <input type="text" v-model="newMediaType"></p>
       <input type="submit" value="Add To List">
     </form>
-    <h2>{{ title.title }}</h2>
+    <h2>{{ title.title }}<img v-bind:src="baseUrlPoster + title.poster_path"></h2>
     <!-- <h4>Runtime:{{ title.runtime }}</h4> -->
     <h3>Summary: {{ title.overview }}</h3>
     <h3>Cast:</h3>
     <div v-for="cast in title.credits.cast">
-      <p>{{ cast.name }} : {{ cast.character }}</p>
+      <p>{{ cast.name }} : {{ cast.character }}<img v-bind:src="baseUrlProfile + cast.profile_path"></p>
     </div>
     <!-- <button v-on:click="addTitle(title)">Add To List</button> -->
     <!-- <p>{{ title.credits.cast }}</p> -->
@@ -36,7 +36,9 @@ export default {
       },
       newListId: "",
       newTitleId: "",
-      newMediaType: ""
+      newMediaType: "",
+      baseUrlPoster: "https://image.tmdb.org/t/p/w154",
+      baseUrlProfile: "https://image.tmdb.org/t/p/w185"
     };
     // body...
   },

@@ -15,7 +15,7 @@ export default {
   data: function() {
     return {
       titles: [],
-      baseUrl: "https://image.tmdb.org/t/p/w185"
+      baseUrl: "https://image.tmdb.org/t/p/w154"
     };
   },
   created: function() {
