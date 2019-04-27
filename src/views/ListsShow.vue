@@ -1,11 +1,11 @@
 <template>
   <div class="root">
-    <p>Add New Title Option</p>
+    <!-- <p>Add New Title Option</p> -->
     <h1><p>{{ list.name }}</p></h1>
     <div v-for='title in list.titles'>
-      <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_title }}</router-link>
+      <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_title }}<img v-bind:src="baseUrl + title.body.poster_path"></router-link>
       <div v-if='title.body.original_name'>
-        <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_name }}</router-link>
+        <router-link v-bind:to="'/titles/' + title.body.id + '/?media_type=' + title.media_type">{{ title.body.original_name }}<img v-bind:src="baseUrl + title.body.poster_path"></router-link>
       </div>
     </div>
     
@@ -20,7 +20,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      list: []
+      list: [],
+      baseUrl: "https://image.tmdb.org/t/p/w185"
     };
   },
   created: function() {

@@ -32,22 +32,14 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      title: { credits: {}
+      title: { credits: {},
       },
-
+      newListId: "",
+      newTitleId: "",
+      newMediaType: ""
     };
     // body...
   },
-
-  title_data: function() {
-    return {
-      newListId:"",
-      newTitleId:"",
-      newMediaType:""
-    };
-    // body...
-  },
-
   
 
   created: function() {
