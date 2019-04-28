@@ -13,7 +13,7 @@
     <h3>Cast:</h3>
     <div v-for="cast in title.combined_credits.cast">
       <div v-if="cast.title">
-        <p>{{ cast.title }} : {{ cast.character }}<img v-bind:src="baseUrlPoster + cast.poster_path"></p>
+        <p><router-link v-bind:to="'/titles/' + cast.id + '?media_type=' + cast.media_type">{{ cast.title }}</router-link> : {{ cast.character }}<img v-bind:src="baseUrlPoster + cast.poster_path"></p>
       </div>
       <div v-else>
         <p>{{ cast.original_name }} : {{ cast.character }}<img v-bind:src="baseUrlPoster + cast.poster_path"></p>

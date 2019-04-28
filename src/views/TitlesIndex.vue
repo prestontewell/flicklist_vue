@@ -28,10 +28,10 @@ export default {
       baseUrlProfile: "https://image.tmdb.org/t/p/w185"
     };
   },
-  created: function() {
+  mounted: function() {
     axios.get("/api/titles?search=" + this.$route.params.searchInput).then(response => { 
       console.log(response.data);
-      console.log()
+      console.log();
       this.titles = response.data;
     });
   },
