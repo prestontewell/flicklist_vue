@@ -28,7 +28,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link active" href="/" tabindex="-1" aria-disabled="true">Lists</a>
           </li>
         </ul>
         <form v-on:submit.prevent="submit()" class="form-inline my-2 my-lg-0">

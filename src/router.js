@@ -7,6 +7,7 @@ import Logout from "./views/Logout.vue";
 import TitlesIndex from "./views/TitlesIndex.vue";
 import TitlesShow from "./views/TitlesShow.vue";
 import ListsShow from "./views/ListsShow.vue";
+import PersonShow from "./views/PersonShow.vue";
 
 
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/titles/:id',
       name: 'titles-show',
       component: TitlesShow
+    },
+    {
+      path: '/person/:id',
+      name: 'person-show',
+      component: PersonShow
     },
 
     {
