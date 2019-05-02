@@ -37,7 +37,9 @@
         </form>
       </div>
     </nav>
+
     <router-view/>
+    
   </div>
 </template>
 
@@ -52,12 +54,10 @@
 #nav {
   padding: 30px;
 }
-
 #nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 #nav a.router-link-exact-active {
   color: #42b983;
 }
@@ -79,7 +79,6 @@ export default {
     submit: function() {
       console.log(this.searchInput);
       this.$router.push("/titles-search/" + this.searchInput);
-       
 
     },
   }

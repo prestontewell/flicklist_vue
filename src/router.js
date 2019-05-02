@@ -44,13 +44,13 @@ export default new Router({
     },
 
     {
-      path: '/login',
+      path: '/login/',
       name: 'login',
       component: Login
     },
 
     {
-      path: '/logout',
+      path: '/logout/',
       name: 'logout',
       component: Logout
     },
