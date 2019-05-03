@@ -1,0 +1,11 @@
+<div class="home">
+
+    <h1>Now Showing {{  }}</h1>
+    <div v-for="list in lists">
+      <h2><router-link v-bind:to="'/lists/' + list.id">{{ list.name }}</router-link></h2>
+    </div>
+  <form v-on:submit.prevent="createList()">
+    <p>New FlickList: <input type="text" v-model="newListName"></p>
+    <input type="submit" value="Create List">       
+  </form>
+</div>

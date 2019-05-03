@@ -1,66 +1,149 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">FlickList</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          <!-- </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Users
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="text-align: center">
-              <p>  <router-link to="/signup">Signup</router-link> </p>
-              <p>  <router-link to="/login">Login</router-link>   </p>
-              <p>  <router-link to="/logout">Logout</router-link> </p>
-              <!-- <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a> -->
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/" tabindex="-1" aria-disabled="true">Lists</a>
-          </li>
-        </ul>
-        <form v-on:submit.prevent="submit()" class="form-inline my-2 my-lg-0">
-          <input v-model="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <div id="preloader"></div>
+    <header class="header">
+      <div class="container">
+        <div class="header-area">
+          <!-- <div class="logo">
+            <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
+          </div> -->
+          <div class="header-right">
+            <form v-on:submit.prevent="submit()">
+              <!-- <select>
+                <option value="Movies">Movies</option>
+                <option value="Movies">Movies</option>
+                <option value="Movies">Movies</option>
+              </select> -->
+              <input v-model="searchInput" type="text"/>
+              <button type="submit"><i class="icofont icofont-search"></i></button>
+            </form>
+            <ul>
+              <li><a href="#">Welcome Guest!</a></li>
+              <li><a class="login-popup" href="#">Login</a></li>
+            </ul>
+          </div>
+          <div class="menu-area">
+            <div class="responsive-menu"></div>
+              <div class="mainmenu">
+                <ul id="primary-menu">
+                  <li><a class="active" href="/">Home</a></li>
+                  <li><a href="movies.html">Movies</a></li>
+                  <li><a href="celebrities.html">CelebritiesList</a></li>
+                  <li><a href="top-movies.html">Top Movies</a></li>
+                  <li><a href="blog.html">News</a></li>
+                  <li><a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
+                    <ul>
+                      <li><a href="blog-details.html">Blog Details</a></li>
+                      <li><a href="movie-details.html">Movie Details</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Tickets</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="login-area">
+      <div class="login-box">
+        <a href="#"><i class="icofont icofont-close"></i></a>
+        <h2>LOGIN</h2>
+        <form action="#">
+          <h6>USERNAME OR EMAIL ADDRESS</h6>
+          <input type="text" />
+          <h6>PASSWORD</h6>
+          <input type="text" />
+          <div class="login-remember">
+            <input type="checkbox" />
+            <span>Remember Me</span>
+          </div>
+          <div class="login-signup">
+            <span>SIGNUP</span>
+          </div>
+          <a href="#" class="theme-btn">LOG IN</a>
+          <span>Or Via Social</span>
+          <div class="login-social">
+            <a href="#"><i class="icofont icofont-social-facebook"></i></a>
+            <a href="#"><i class="icofont icofont-social-twitter"></i></a>
+            <a href="#"><i class="icofont icofont-social-linkedin"></i></a>
+            <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+            <a href="#"><i class="icofont icofont-camera"></i></a>
+          </div>
         </form>
       </div>
-    </nav>
+    </div>
 
     <router-view/>
-    
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <!-- <div class="widget">
+              <img src="assets/img/logo.png" alt="about" />
+              <p>7th Harley Place, London W1G 8LZ United Kingdom</p>
+              <h6><span>Call us: </span>(+880) 111 222 3456</h6>
+            </div> -->
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="widget">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Security</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="widget">
+              <h4>Account</h4>
+              <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Watchlist</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">User Guide</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <!-- <div class="widget">
+              <h4>Newsletter</h4>
+              <p>Subscribe to our newsletter system now to get latest news from us.</p>
+              <form action="#">
+                <input type="text" placeholder="Enter your email.."/>
+                <button>SUBSCRIBE NOW</button>
+              </form>
+            </div> -->
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-center text-lg-left">
+              <div class="copyright-content">
+                <p>&copy; 2018 MoviePoint. All Rights Reserved. Designed by octopas</p>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+              <div class="copyright-content">
+                <a href="#" class="scrollToTop">
+                  Back to top<i class="icofont icofont-arrow-up"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
 </style>
 
 <script>
