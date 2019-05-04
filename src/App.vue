@@ -82,11 +82,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-sm-6">
-            <!-- <div class="widget">
-              <img src="assets/img/logo.png" alt="about" />
-              <p>7th Harley Place, London W1G 8LZ United Kingdom</p>
-              <h6><span>Call us: </span>(+880) 111 222 3456</h6>
-            </div> -->
+            <div class="widget">
+              <img src="https://www.themoviedb.org/assets/2/v4/logos/powered-by-rectangle-green-dcada16968ed648d5eb3b36bbcfdd8cdf804f723dcca775c8f2bf4cea025aad6.svg" alt="about" />
+              <!-- <p>7th Harley Place, London W1G 8LZ United Kingdom</p>
+              <h6><span>Call us: </span>(+880) 111 222 3456</h6> -->
+            </div>
           </div>
           <div class="col-lg-3 col-sm-6">
             <div class="widget">
