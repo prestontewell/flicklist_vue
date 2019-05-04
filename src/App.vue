@@ -48,6 +48,9 @@
       <div class="login-box">
         <a href="#"><i class="icofont icofont-close"></i></a>
         <h2>LOGIN</h2>
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}"</li>
+        </ul>
         <form action="#">
           <h6>USERNAME OR EMAIL ADDRESS</h6>
           <input type="text" />
@@ -153,7 +156,10 @@ export default {
 
   data: function() {
     return {
-      searchInput: ""
+      searchInput: "",
+      username: "",
+      password: "",
+      errors: []
     }; 
   },
 
@@ -162,10 +168,27 @@ export default {
     submit: function() {
       console.log(this.searchInput);
       this.$router.push("/titles-search/" + this.searchInput);
-
     },
+    submitLogin: function() {
+      var params = {
+        username: this.username,
+        password: this.password
+      };
+      axios
+        .post("/api/sessions", params)
+        .then(response => {
+          axios.defaults.headers.common["Authorization"] = 
+          "Bearer" + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          this.$router.push("/");
+        })
+        .catch(error => {
+          this.errors  ["Invalid username or password."];
+          this.username = "";
+          this.password = "";
+        });
+    }
   }
-
 };
 
 </script>

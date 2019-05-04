@@ -31,7 +31,7 @@
                   <ul>
                     <li>
                       <div class="transformers-left">
-                        Movie:
+                        Tagline:
                       </div>
                       <div class="transformers-right">
                         {{ title.tagline }}
@@ -55,7 +55,7 @@
                     </li>
                     <li>
                       <div class="transformers-left">
-                        Time: 
+                        Runtime: 
                       </div>
                       <div class="transformers-right">
                         {{ title.runtime }}
@@ -91,7 +91,7 @@
                         
                       </div>
                     </li> -->
-                    <li>
+                    <!-- <li>
                       <div class="transformers-left">
                         Share:
                       </div>
@@ -101,7 +101,7 @@
                         <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
                         <a href="#"><i class="icofont icofont-youtube-play"></i></a>
                       </div>
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
               </div>
@@ -125,7 +125,7 @@
             <div class="portfolio-sidebar">
               <div v-for="cast in title.credits.cast">
                 <p><img v-bind:src="baseUrlProfile + cast.profile_path">
-                  <router-link v-bind:to="'/person/' + cast.id + '/?media_type=person'">     {{ cast.name }}</router-link> : {{ cast.character }}</p>
+                  <router-link v-bind:to="'/person/' + cast.id + '/?media_type=person'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cast.name }}</router-link> &nbsp;&nbsp; : &nbsp;&nbsp; {{ cast.character }}</p>
               </div>
             <!-- <img src="assets/img/sidebar/sidebar1.png" alt="sidebar" />
             <img src="assets/img/sidebar/sidebar2.png" alt="sidebar" />

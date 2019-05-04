@@ -29,13 +29,6 @@ export default {
     };
   },
 
-
-  
-      
-  // created: function() {
-    
-  // },
-
   computed: {
     searchInput: function() {
       return this.$route.params.searchInput;

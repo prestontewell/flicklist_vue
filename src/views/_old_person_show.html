@@ -1,0 +1,24 @@
+<div class="person">
+    <h1>Bio</h1>
+    <!-- <form v-on:submit.prevent="addTitle()">
+      <p>List ID: <input type="text" v-model="newListId"></p>
+      <p>Title ID: <input type="text" v-model="newTitleId"></p>
+      <p>Media Type: <input type="text" v-model="newMediaType"></p>
+      <input type="submit" value="Add To List">
+    </form> -->
+    <h2>{{ title.name }}<img v-bind:src="baseUrlProfile + title.profile_path"></h2>
+    <!-- <h4>Runtime:{{ title.runtime }}</h4> -->
+    <h3>Biography: {{ title.biography }}</h3>
+    <h3>Cast:</h3>
+    <div v-for="cast in title.combined_credits.cast">
+      <div v-if="cast.title">
+        <p><router-link v-bind:to="'/titles/' + cast.id + '?media_type=' + cast.media_type">{{ cast.title }}</router-link> : {{ cast.character }}<img v-bind:src="baseUrlPoster + cast.poster_path"></p>
+      </div>
+      <div v-else>
+        <p>{{ cast.original_name }} : {{ cast.character }}<img v-bind:src="baseUrlPoster + cast.poster_path"></p>
+      </div>
+        
+    </div>
+    <!-- <button v-on:click="addTitle(title)">Add To List</button> -->
+    <!-- <p>{{ title.credits.cast }}</p> -->
+</div>
