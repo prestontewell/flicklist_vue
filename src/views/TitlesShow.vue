@@ -106,7 +106,26 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="theme-btn"><i class="icofont icofont-ticket"></i> Add To List </a>
+            
+              <div class="menu-area"> 
+                <div class="responsive-menu">
+                  <div class="mainmenu">
+                    <ul id="primary-menu"> 
+                      <a class="active">Lists </a>
+                        <li><i class="icofont  icofont-simple-down"></i>
+                          <ul>
+                            <div v-for="list in lists">
+                              <li><p v-on:click="addTitle(list)">{{ list.name }}</p></li>
+                            </div> 
+                          </ul>
+                        </li>
+                    </ul>
+                    
+                  </div>
+                </div>    
+              </div> 
+            
+                
           </div>
         </div>
     </section>
@@ -153,6 +172,7 @@ export default {
     return {
       title: { credits: { crew: [{name: ""}, {name: ""}], cast:[]},}, 
       genres: [],
+      lists: [],
       newListId: "",
       newTitleId: "",
       newMediaType: "",
@@ -167,21 +187,20 @@ export default {
 
     axios.get('/api/titles/' + this.$route.params.id + '/?' + 'media_type=' + this.$route.query.media_type).then(response => { 
       this.title = response.data;
-      console.log(this.current_user);
       console.log(response.data);
     });
-
-  
-    console.log(this.$route.params.id);
-    console.log(this.$route.query.media_type);
+    axios.get('api/lists').then(response => {
+      this.lists = response.data;
+      console.log(this.lists);
+    });
   },
 
   methods: {
-    addTitle: function() {
+    addTitle: function(list) {
       var params = {
-        list_id: this.newListId,
-        title_id: this.newTitleId,
-        media_type: this.newMediaType
+        list_id: list.id,
+        title_id: this.title.id,
+        media_type: this.$route.query.media_type
       };
       axios.post('/api/list_titles', params).then(response => {
         console.log(response.data);

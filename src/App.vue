@@ -18,7 +18,7 @@
               <button type="submit"><i class="icofont icofont-search"></i></button>
             </form>
             <ul>
-              <li><a href="#">Welcome Guest!</a></li>
+              <!-- <li><a href="#">Welcome Guest!</a></li> -->
               <li><a class="login-popup" href="#">Login</a></li>
             </ul>
           </div>
@@ -53,7 +53,7 @@
             <li class="text-danger" v-for="error in errors">{{ error }}"</li>
           </ul>
           <h6>USERNAME</h6>
-          <input type="username" class="form-control" v-model="username" />
+          <input type="username" class="form-control" v-model="username"/>
           <h6>PASSWORD</h6>
           <input type="password" class="form-control" v-model="password"/>
           <div class="login-remember">
@@ -64,7 +64,7 @@
             <span>SIGNUP</span>
           </div>
           <!-- <input type="submit" class="theme-btn" value="Submit"> -->
-          <input type="submit" class="theme-btn" value="submitLogin">LOG IN
+          <input type="submit" class="theme-btn" value="submitLogin">
           <span>Or Via Social</span>
           <div class="login-social">
             <a href="#"><i class="icofont icofont-social-facebook"></i></a>

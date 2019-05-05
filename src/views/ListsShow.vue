@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-lg-1">
             <div class="breadcrumb-area-content">
-              <h1><p>{{ list.name }}</p></h1>
+              <h2><p>{{ list.name }}</p></h2>
               <!-- <h1>Movie Detalied Page</h1> -->
             </div>
           </div>
