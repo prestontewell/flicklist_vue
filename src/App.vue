@@ -48,14 +48,14 @@
       <div class="login-box">
         <a href="#"><i class="icofont icofont-close"></i></a>
         <h2>LOGIN</h2>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}"</li>
-        </ul>
-        <form action="#">
-          <h6>USERNAME OR EMAIL ADDRESS</h6>
-          <input type="text" />
+        <form v-on:submit.prevent="submitLogin()">
+          <ul>
+            <li class="text-danger" v-for="error in errors">{{ error }}"</li>
+          </ul>
+          <h6>USERNAME</h6>
+          <input type="username" class="form-control" v-model="username" />
           <h6>PASSWORD</h6>
-          <input type="text" />
+          <input type="password" class="form-control" v-model="password"/>
           <div class="login-remember">
             <input type="checkbox" />
             <span>Remember Me</span>
@@ -63,7 +63,8 @@
           <div class="login-signup">
             <span>SIGNUP</span>
           </div>
-          <a href="#" class="theme-btn">LOG IN</a>
+          <!-- <input type="submit" class="theme-btn" value="Submit"> -->
+          <input type="submit" class="theme-btn" value="submitLogin">LOG IN
           <span>Or Via Social</span>
           <div class="login-social">
             <a href="#"><i class="icofont icofont-social-facebook"></i></a>

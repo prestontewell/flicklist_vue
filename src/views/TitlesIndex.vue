@@ -1,19 +1,48 @@
 <template>
+
   <div class="titles">
-    <h1>All Titles</h1>
-    <div v-for="title in titles.results">
-      <!-- <h2>{{ title.title }}</h2> -->
-      <h2>
-        <div v-if="title.media_type === 'person'">
-          <p><router-link v-bind:to="'/person/' + title.id + '/?media_type=person'">{{ title.name }}</router-link><img v-bind:src="baseUrlProfile + title.profile_path"></p>
+    <section class="breadcrumb-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1">
+            <div class="breadcrumb-area-content">
+              <!-- <h1>Movie Detalied Page</h1> -->
+            </div>
+          </div>
         </div>
-        <div v-else>
-          <p><router-link v-bind:to="'/titles/' + title.id + '/?media_type=' + title.media_type">{{ title.title || title.original_name }}</router-link><img v-bind:src="baseUrlPoster + title.poster_path"></p>
+      </div>
+    </section>
+    <section class="transformers-area">
+      <div class="container">
+        <div v-for="title in titles.results">  
+          <div class="transformers-box">
+            <div class="row flexbox-center">
+              <div class="col-lg-5 text-lg-left text-center">
+                <div v-if="title.media_type === 'person'">
+                  <div class="transformers-content">
+                    <img v-bind:src="baseUrlProfile + title.profile_path">
+                  </div>
+                  <p>{{ title.name }}</p>
+                </div>
+                <div v-else>
+                  <div class="row flexbox-center">
+                    <div class="transformers-content">
+                      <img v-bind:src="baseUrlPoster + title.poster_path">
+                    </div>
+                  <div class="col-lg-7">
+                    <div class="transformers-content">
+                      <h2><router-link v-bind:to="'/titles/' + title.id + '/?media_type=' + title.media_type">{{ title.title || title.original_name }}</router-link></h2>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- <p><router-link v-bind:to="'/titles/' + title.id + '/?media_type=' + title.media_type">{{ title.title || title.original_name }}</router-link><img v-bind:src="baseUrlPoster + title.poster_path"></p> -->
-          
-      </h2>
-    </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -28,16 +57,6 @@ export default {
       baseUrlProfile: "https://image.tmdb.org/t/p/w185"
     };
   },
-
-
-
-
-  
-      
-  // created: function() {
-    
-  // },
-
 
   computed: {
     searchInput: function() {

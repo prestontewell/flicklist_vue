@@ -167,7 +167,7 @@ export default {
 
     axios.get('/api/titles/' + this.$route.params.id + '/?' + 'media_type=' + this.$route.query.media_type).then(response => { 
       this.title = response.data;
-      console.log(this.title.genres[0])
+      console.log(this.current_user);
       console.log(response.data);
     });
 
