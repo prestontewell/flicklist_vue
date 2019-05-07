@@ -70,6 +70,7 @@ export default {
         console.log(this.searchInput);
         this.titles = response.data;
       });
+      console.log(this.titles);
     }
   },
  

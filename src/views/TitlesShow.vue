@@ -1,17 +1,17 @@
 <template>
 
   <div class="title">
-    <section class="breadcrumb-area">
+    <!-- <section class="breadcrumb-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-1">
             <div class="breadcrumb-area-content">
-              <!-- <h1>Movie Detalied Page</h1> -->
+              <h1>Movie Detalied Page</h1>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   <!-- <div id="preloader"></div> -->
     <section class="transformers-area">
         <div class="container">

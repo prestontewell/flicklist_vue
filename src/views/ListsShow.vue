@@ -20,8 +20,20 @@
             <div class="row flexbox-center">
               <div class="col-lg-5 text-lg-left text-center">
                   <div class="row flexbox-center">
-                    <div class="transformers-content">
-                      <img v-bind:src="baseUrlPoster + title.body.poster_path">
+                    {{ title.title }}
+                    <div class="transformers-content mtr-30">
+                      <ul>
+                        <li>
+                          <div class="tranformers-left">
+                            <img v-bind:src="baseUrlPoster + title.body.poster_path">
+                          </div>
+                          <div class="transformers-right text-lg-left text-center">
+                            <input type="checkbox" v-on:click="deleteTitle(title, list.id)"/>
+                            <span>Seen It</span>
+                          </div>
+                        </li>
+                        
+                      </ul>
                     </div>
                   <div class="col-md-1">
                     <div class="transformers-content">
@@ -54,12 +66,31 @@ export default {
   },
   created: function() {
     axios.get("/api/lists/" + this.$route.params.id).then(response => {
-      console.log(response.data);
       this.list = response.data;
+      console.log(this.list.titles);
     });
-    console.log(this.$route.params.id);
-    console.log(this.$route);
   },
-  methods: {}
+  methods: {
+    deleteTitle: function(title, listId) {
+      console.log(title, listId);
+      var params = {
+        list_id: listId,
+        title_id: title.body.id,
+      };
+      console.log(this.list);
+      axios.delete("/api/list_titles/", {params: params}).then(response => {
+        var index = this.list.titles.indexOf(title);
+        this.list.titles.splice(index, 1);
+      });
+        
+        
+      
+
+
+      
+    }
+
+  },
+  
 };
 </script>
