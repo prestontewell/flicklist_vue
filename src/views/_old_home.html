@@ -1,11 +1,50 @@
 <div class="home">
-
-    <h1>Now Showing {{  }}</h1>
-    <div v-for="list in lists">
-      <h2><router-link v-bind:to="'/lists/' + list.id">{{ list.name }}</router-link></h2>
-    </div>
-  <form v-on:submit.prevent="createList()">
-    <p>New FlickList: <input type="text" v-model="newListName"></p>
-    <input type="submit" value="Create List">       
-  </form>
+    <section class="breadcrumb-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1">
+            <div class="breadcrumb-area-content">
+              <h1>Now Showing {{  }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="transformers-area">
+      <div class="container">
+        <div>
+          <div v-for="list in lists">
+            <div class="transformers-box">
+            <div class="row flexbox-center">
+              <div class="col-lg-5 text-lg-left text-center">
+                  <div class="row flexbox-center">
+                    <div class="transformers-content">
+                    </div>
+                  <div class="col-md-10">
+                    <div class="transformers-content">
+                      <h2><p><router-link v-bind:to="'/lists/' + list.id">{{ list.name }}</router-link></p></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>  
+        </div>
+        <section class="transformers-area">
+          <div class="transformers-box">
+            <div class="row flexbox-center">
+              <div class="col-lg-5 text-lg-left text-center">
+                <div class="row flexbox-center">              
+                  <form v-on:submit.prevent="createList()">
+                    <p>New FlickList: <input type="text" v-model="newListName"></p>
+                    <input type="submit" value="Create List">       
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </section>
+      </div>
+    </section>
 </div>

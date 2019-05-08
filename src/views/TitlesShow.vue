@@ -1,17 +1,17 @@
 <template>
 
   <div class="title">
-    <!-- <section class="breadcrumb-area">
+    <section class="breadcrumb-area">
       <div class="container">
         <div class="row">
-          <div class="col-lg-1">
-            <div class="breadcrumb-area-content">
-              <h1>Movie Detalied Page</h1>
+          <div class="col-lg-12">
+            <div class="breadcrumb-area-content h2">
+              <h1>Coming Soon!</h1>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   <!-- <div id="preloader"></div> -->
     <section class="transformers-area">
         <div class="container">
@@ -24,7 +24,7 @@
               </div>
               <div class="col-lg-7">
                 <div class="transformers-content">
-                  <h2>{{ title.title }}</h2>
+                  <h2>{{ title.title || title.name }}</h2>
                   <p><span v-for="genre in title.genres">
                     {{ genre.name }} |
                   </span></p>
@@ -66,7 +66,7 @@
                         Release:
                       </div>
                       <div class="transformers-right">
-                        {{ title.release_date }}
+                        {{ title.release_date || title.first_air_date}}
                       </div>
                     </li>
                     <!-- <li>
@@ -106,12 +106,11 @@
                 </div>
               </div>
             </div>
-            
               <div class="menu-area"> 
                 <div class="responsive-menu">
                   <div class="mainmenu">
                     <ul id="primary-menu"> 
-                      <a class="active">Lists </a>
+                      <a class="active">Lists</a>
                         <li><i class="icofont  icofont-simple-down"></i>
                           <ul>
                             <div v-for="list in lists">
@@ -119,13 +118,10 @@
                             </div> 
                           </ul>
                         </li>
-                    </ul>
-                    
+                    </ul> 
                   </div>
                 </div>    
               </div> 
-            
-                
           </div>
         </div>
     </section>
@@ -189,7 +185,7 @@ export default {
       this.title = response.data;
       console.log(response.data);
     });
-    axios.get('api/lists').then(response => {
+    axios.get('/api/lists').then(response => {
       this.lists = response.data;
       console.log(this.lists);
     });

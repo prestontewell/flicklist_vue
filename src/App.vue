@@ -4,9 +4,9 @@
     <header class="header">
       <div class="container">
         <div class="header-area">
-          <!-- <div class="logo">
-            <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-          </div> -->
+          <div class="logo">
+            <h2><a href="/"><img src="/assets/img/logo.png" alt="logo" /></a></h2>
+          </div>
           <div class="header-right">
             <form v-on:submit.prevent="submit()">
               <!-- <select>
@@ -26,18 +26,19 @@
             <div class="responsive-menu"></div>
               <div class="mainmenu">
                 <ul id="primary-menu">
-                  <li><a class="active" href="/">Home</a></li>
+                  <li><h1><a href="/">FlickList!</a></h1></li>
+                  <!-- <li><a class="active" href="/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a></li> -->
                   <li><a href="movies.html">Movies</a></li>
-                  <li><a href="celebrities.html">CelebritiesList</a></li>
-                  <li><a href="top-movies.html">Top Movies</a></li>
+                  <li><a href="celebrities.html">Series</a></li>
+                  <li><a href="/lists/">Lists</a></li>
                   <li><a href="blog.html">News</a></li>
-                  <li><a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
+                  <!-- <li><a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
                     <ul>
                       <li><a href="blog-details.html">Blog Details</a></li>
                       <li><a href="movie-details.html">Movie Details</a></li>
                     </ul>
-                  </li>
-                  <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Tickets</a></li>
+                  </li> -->
+                  <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Stream It!</a></li>
                 </ul>
               </div>
           </div>

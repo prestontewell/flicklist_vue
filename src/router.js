@@ -6,6 +6,7 @@ import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import TitlesIndex from "./views/TitlesIndex.vue";
 import TitlesShow from "./views/TitlesShow.vue";
+import ListsIndex from "./views/ListsIndex.vue";
 import ListsShow from "./views/ListsShow.vue";
 import PersonShow from "./views/PersonShow.vue";
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/lists/:id',
       name: 'lists-show',
       component: ListsShow
+    },
+    {
+      path: '/lists/',
+      name: 'lists',
+      component: ListsIndex
     },
     {
       path: '/titles-search/:searchInput',
